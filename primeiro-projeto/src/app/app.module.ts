@@ -7,6 +7,7 @@ import { CursosModule } from './cursos/cursos.module';
 import { MeuPrimeiroComponent } from './meu-primeiro/meu-primeiro.component';
 import { MeuPrimeiro2Component } from './meu-primeiro2/meu-primeiro2.component';
 import { DataBindingComponent } from './data-binding/data-binding.component';
+import { MeuFormModule } from './meu-form/meu-form.module';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { DataBindingComponent } from './data-binding/data-binding.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    CursosModule
+    CursosModule,
+    MeuFormModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -12,7 +12,7 @@ export class DataBindingComponent implements OnInit {
   urlImagem: string = 'http://lorempixel.com.br/500/400/?2';
 
   valorAtual: string = '';
-  valorSalvo: string = '';
+  valorSalvo: string = 'abc';
 
   isMouseOver: boolean = false;
 
