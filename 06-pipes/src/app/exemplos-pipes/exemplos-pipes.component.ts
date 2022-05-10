@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { interval } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-exemplos-pipes',
@@ -6,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./exemplos-pipes.component.css']
 })
 export class ExemplosPipesComponent implements OnInit {
+
+  constructor() { }
 
   livro: any = {
     titulo: 'Learning JavaScript Data Structures and Algorithms 2nd ed',
@@ -16,18 +20,28 @@ export class ExemplosPipesComponent implements OnInit {
     url: 'http://a.co/glqjpRP'
   };
 
-  livros: string[] = ['Java', 'Angular 8'];
+  livros: string[] = ['Java', 'Angular 2'];
 
   filtro: string | any;
 
-  addCurso(valor : string) {
+  addCurso(valor : any) {
     this.livros.push(valor);
     console.log(this.livros);
   }
 
-  constructor() { }
+  obterCursos() {
 
-  ngOnInit(): void {
+    if (this.livros.length === 0 || this.filtro === undefined
+    || this.filtro.trim() === '') {
+      return this.livros;
+    }
+
+    return this.livros.filter(
+       v => v.toLocaleLowerCase().includes(this.filtro.toLocaleLowerCase())
+    );
+  }
+
+  ngOnInit() {
   }
 
 }
