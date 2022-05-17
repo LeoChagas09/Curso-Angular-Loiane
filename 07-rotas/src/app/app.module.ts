@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { AuthService } from './login/auth.service';
+import { AuthGuard } from './guards/auth.guard';
 // import { CursosModule } from './cursos/cursos.module';
 // import { AlunosComponent } from './alunos/alunos.component';
 // import { AlunosModule } from './alunos/alunos.module';
@@ -31,6 +32,7 @@ import { AuthService } from './login/auth.service';
   ],
   providers: [
     AuthService,
+    AuthGuard
     // CursosService
   ],
   bootstrap: [AppComponent]
