@@ -1,11 +1,14 @@
 <form #f="ngForm" (ngSubmit)="onSubmit(f)">
   <div class="mb-3">
     <label for="nome" class="form-label">Nome</label>
-    <input type="text" class="form-control" id="nome" [ngModel]="usuario.nome" [ngModelOptions]="{standalone: true}">
+    <input type="text" class="form-control" id="nome" [ngModel]="usuario.nome" [ngModelOptions]="{standalone: true}" required>
   </div>
   <div class="mb-3">
     <label for="email" class="form-label">Email</label>
-    <input type="email" class="form-control" id="email" placeholder="nome@email.com" [ngModel]="usuario.email" [ngModelOptions]="{standalone: true}">
+    <input type="email" class="form-control" id="email"
+    placeholder="nome@email.com" [ngModel]="usuario.email" [ngModelOptions]="{standalone: true}"
+    required pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?">
+
   </div>
   <button type="submit" class="btn btn-primary">Enviar</button>
 </form>
