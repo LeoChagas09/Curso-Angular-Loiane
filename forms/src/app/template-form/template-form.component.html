@@ -21,6 +21,8 @@
     </div>
   </div>
 
+  <div ngModelGroup="endereco">
+
   <div class="row g-3">
 
     <div class="col-md-3 was-validated" [ngClass]="aplicaCssErro(cep)">
@@ -77,6 +79,7 @@
         Estado é obrigatório
       </div>
     </div>
+</div>
 
     <div class="col-12">
       <button type="submit" class="btn btn-primary" [disabled]="!f.valid">Submit</button>
